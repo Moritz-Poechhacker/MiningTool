@@ -1,0 +1,9 @@
+<div layout="row" ng-controller="NewPlayerController">
+    <md-input-container>
+        <label>Character Name</label>
+        <input ng-model="charname">
+        <md-button ng-click="onInput(charname)"> OK </md-button>
+
+    </md-input-container>
+    <table> <tr ng-repeat="x in characters"><td>{{x.name}}</td></tr> </table>
+</div>

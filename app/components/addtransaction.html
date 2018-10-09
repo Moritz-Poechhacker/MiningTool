@@ -1,0 +1,26 @@
+<div layout="row">
+
+    <md-input-container>
+        <label>Name</label>
+        <md-select ng-model="transcharname">
+            <md-option><em>None</em></md-option>
+            <md-option ng-repeat="x in charlist" ng-value="x.name">
+                {{x.name}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+    <md-input-container>
+        <label>Ore</label>
+        <md-select ng-model="transorename">
+            <md-option><em>None</em></md-option>
+            <md-option ng-repeat="x in orelist" ng-value="x.Name">
+                {{x.Name}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>Amount</label>
+        <input required type="number" step="any" name="amount" ng-model="transamount" min="1"/>
+    </md-input-container>
+    <md-button ng-click="onTrans()"> OK </md-button>
+</div>

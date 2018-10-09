@@ -1,0 +1,10 @@
+<div ng-repeat="x in ausgabe">
+    <table>
+        <tr>
+            <th ng-bind="x.name"></th>
+        </tr>
+        <tr ng-repeat="(key, value) in x.oresAndAmounts">
+            <td>{{ key + " " + value }}</td>
+        </tr>
+    </table>
+</div>
