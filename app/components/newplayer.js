@@ -8,13 +8,25 @@ app.component("newplayer", {
 });
 
 
-app.controller("NewPlayerController", function(TransactionService, $scope) {
+app.controller("NewPlayerController", function(TransactionService, $scope, $log) {
     $scope.charname = '';
+    this.testobino = true;
 
     $scope.onInput = function(val) {
         TransactionService.addChar(val);
         console.log("In newplayer: "  + val);
         $scope.characters = TransactionService.pchars();
         console.log(TransactionService.pchars());
-    }
+    };
+
+    $scope.unHide = function(){
+        if(this.testobino == true){
+            $log.debug("testobino false");
+            this.testobino = false;
+        }else if(this.testobino == false){
+            $log.debug("testobino true");
+            this.testobino = true;
+        }
+    };
+
 });

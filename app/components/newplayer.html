@@ -1,3 +1,4 @@
+<md-container>
 <div layout="row" ng-controller="NewPlayerController">
     <md-input-container>
         <label>Character Name</label>
@@ -5,5 +6,9 @@
         <md-button ng-click="onInput(charname)"> OK </md-button>
 
     </md-input-container>
-    <table> <tr ng-repeat="x in characters"><td>{{x.name}}</td></tr> </table>
+    <md-card>
+        <md-button ng-click="unHide()" ng-show="$ctrl.testobino"> + </md-button>
+        <table ng-hide="$ctrl.testobino"> <tr ng-repeat="x in characters"><td>{{x.name}}</td></tr> </table>
+    </md-card>
 </div>
+</md-container>

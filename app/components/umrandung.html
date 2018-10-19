@@ -1,18 +1,28 @@
-<newplayer></newplayer>
-<alltransactions></alltransactions>
-<addtransaction mitteilen="aktualisiere()"></addtransaction>
-
-<table>
-    <tr>
-        <th> Ore </th>
-        <th> Amount </th>
-        <th> Total Price</th>
-    </tr>
-    <tr ng-repeat="x in totals">
-        <td> {{x.ore}}</td>
-        <td> {{x.amount}}</td>
-        <td> {{}}</td>
-    </tr>
-</table>
-
-<totproper reload="reloadBla"></totproper>
+<md-content style="background-color: grey; !important">
+    <md-card>
+        <newplayer></newplayer>
+    </md-card>
+    <md-card>
+        <alltransactions></alltransactions>
+    </md-card>
+    <md-card>
+        <addtransaction mitteilen="aktualisiere()"></addtransaction>
+    </md-card>
+    <md-card>
+        <table>
+            <tr>
+                <th> Ore </th>
+                <th> Amount </th>
+                <th> Total Price</th>
+            </tr>
+            <tr ng-repeat="x in totals">
+                <td> {{x.ore}}</td>
+                <td> {{x.amount}}</td>
+                <td> {{}}</td>
+            </tr>
+        </table>
+    </md-card>
+    <md-card>
+        <totproper reload="reloadBla"></totproper>
+    </md-card>
+</md-content>

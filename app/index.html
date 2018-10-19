@@ -46,12 +46,10 @@
         localstorage.setItem(speichername, JSON.stringify(Objekt));
 
         Um es zu laden JSON.parse(localstorage.getitem(speichername));-->
-        <md-content layout-fill>
+        <md-content layout-fill style="background-color: grey; !important">
             <md-tabs layout-fill>
                 <md-tab label="One" layout-fill>
-                    <md-content class="padding">
-                        <umrandung></umrandung>
-                    </md-content>
+                    <umrandung></umrandung>
                 </md-tab>
                 <md-tab label="Two" layout-fill>
                     <oretable></oretable>
