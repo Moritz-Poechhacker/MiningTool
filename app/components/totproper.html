@@ -1,5 +1,7 @@
+<md-button ng-click="$ctrl.showOrHide()" > {{ $ctrl.stat ? "[ + ] Open all" : "[ - ] Close all" }}  </md-button>
 <div ng-repeat="x in ausgabe">
-    <table>
+    <md-button ng-click="x.PPTransH = !x.PPTransH" layout="row" layout-align="start center"> [ {{ x.PPTransH ? "+" : "-" }} ] {{x.name}} </md-button>
+    <table ng-hide="x.PPTransH">
         <tr>
             <th ng-bind="x.name"></th>
         </tr>

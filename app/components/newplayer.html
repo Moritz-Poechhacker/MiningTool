@@ -7,7 +7,7 @@
 
     </md-input-container>
     <md-card>
-        <md-button ng-click="unHide()" ng-show="$ctrl.testobino"> + </md-button>
+        <md-button ng-click="$ctrl.testobino = !$ctrl.testobino" > [ {{ $ctrl.testobino ? "+" : "-" }} ] Namelist </md-button>
         <table ng-hide="$ctrl.testobino"> <tr ng-repeat="x in characters"><td>{{x.name}}</td></tr> </table>
     </md-card>
 </div>

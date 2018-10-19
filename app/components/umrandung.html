@@ -1,12 +1,14 @@
 <md-content style="background-color: grey; !important">
-    <md-card>
-        <newplayer></newplayer>
-    </md-card>
-    <md-card>
+    <div layout="row">
+        <md-card flex layout="column" layout-align="center center">
+            <newplayer></newplayer>
+        </md-card>
+        <md-card flex layout="column" layout-align="center center">
+            <addtransaction mitteilen="aktualisiere()"></addtransaction>
+        </md-card>
+    </div>
+    <md-card layout="column">
         <alltransactions></alltransactions>
-    </md-card>
-    <md-card>
-        <addtransaction mitteilen="aktualisiere()"></addtransaction>
     </md-card>
     <md-card>
         <table>

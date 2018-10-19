@@ -19,14 +19,4 @@ app.controller("NewPlayerController", function(TransactionService, $scope, $log)
         console.log(TransactionService.pchars());
     };
 
-    $scope.unHide = function(){
-        if(this.testobino == true){
-            $log.debug("testobino false");
-            this.testobino = false;
-        }else if(this.testobino == false){
-            $log.debug("testobino true");
-            this.testobino = true;
-        }
-    };
-
 });

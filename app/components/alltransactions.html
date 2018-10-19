@@ -1,4 +1,5 @@
-<table>
+<md-button ng-click="$ctrl.allThide = !$ctrl.allThide" > [ {{ $ctrl.allThide ? "-" : "+" }} ] All Transactions </md-button>
+<table ng-show="$ctrl.allThide">
     <tr>
         <th> Name </th>
         <th> Ore </th>
