@@ -14,8 +14,7 @@ app.controller("MiningFeeController", function(TransactionService, $scope, $log)
     this.tempfee = 0;
 
     this.setFee = function(){
-        $scope.fee = this.tempfee;
-        $log.debug($scope.fee);
+        TransactionService.setFee(this.tempfee);
     };
 
 });

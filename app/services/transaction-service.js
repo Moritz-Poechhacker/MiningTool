@@ -4,6 +4,7 @@ app.service("TransactionService", function($http,$log){
     let charList = [];
     let transactionList = [];
     let totproper = {};
+    let fee = 0;
     let oreMainList = [
         {
             "Type":"Veldspar",
@@ -547,5 +548,11 @@ app.service("TransactionService", function($http,$log){
             $log.debug(oreMainList[i].value);
             $log.debug("###");*/
             return oreMainList[i].value;
+    };
+    this.setFee = function(amount){
+        fee = amount;
+    };
+    this.getFee = function(){
+      return fee;
     };
 });

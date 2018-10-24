@@ -31,4 +31,19 @@ app.controller("TotProController", function(TransactionService, $log, $scope) {
         }
         this.stat = !this.stat;
     };
+
+    this.totalFee = function(charname){
+        let feecalc = TransactionService.getTransactions();
+        let count = 0;
+        for(let i = 0; i < feecalc.length; i++){
+            if(feecalc[i].name = charname){
+                count++;
+            }
+        }
+        let calcfee = TransactionService.getFee();
+        console.log("Calcfee: " + calcfee);
+        console.log("Count: " + count);
+        let final = count * calcfee;
+        return final;
+    };
 });
