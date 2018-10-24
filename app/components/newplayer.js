@@ -10,7 +10,7 @@ app.component("newplayer", {
 
 app.controller("NewPlayerController", function(TransactionService, $scope, $log) {
     $scope.charname = '';
-    this.testobino = true;
+    this.playerlist = true;
 
     $scope.onInput = function(val) {
         TransactionService.addChar(val);

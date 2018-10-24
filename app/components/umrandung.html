@@ -6,6 +6,9 @@
         <md-card flex layout="column" layout-align="center center">
             <addtransaction mitteilen="aktualisiere()"></addtransaction>
         </md-card>
+        <md-card flex layout="column" layout-align="center center">
+            <miningfee></miningfee>
+        </md-card>
     </div>
     <md-card layout="column">
         <alltransactions></alltransactions>
@@ -20,7 +23,7 @@
             <tr ng-repeat="x in totals">
                 <td> {{x.ore}}</td>
                 <td> {{x.amount}}</td>
-                <td> {{}}</td>
+                <td> {{x.transvalue}}</td>
             </tr>
         </table>
     </md-card>

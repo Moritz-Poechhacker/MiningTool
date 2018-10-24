@@ -23,6 +23,7 @@ app.controller("TransactionController", function(TransactionService, $scope, $lo
         //console.log($scope.transamount);
         TransactionService.addTransaction(new Transaction($scope.transcharname, $scope.transorename, $scope.transamount));
         that.mitteilen();
+        console.log("Transactions: ");
         console.log(TransactionService.getTransactions());
     }
 });

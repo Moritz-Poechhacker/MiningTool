@@ -45,6 +45,7 @@ app.controller("UmrandungController", function ($scope, TransactionService, $log
         for(let oreAndAmount of sentOresAndAmount){
 
             $scope.totals.push({"ore": oreAndAmount[0], "amount": oreAndAmount[1], "transvalue": oreAndAmount[2]});
+            $log.debug("umrandung totals: ", $scope.totals);
         }
 
     };
