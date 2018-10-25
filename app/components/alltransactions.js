@@ -12,5 +12,5 @@ app.controller("AllTransController", function(TransactionService, $log, $scope) 
 
     console.log("alltransactions yes");
     $scope.allOretransactions = TransactionService.getTransactions();
-    console.log($scope.allOretransactions);
+    $log.debug("AllTransactions: ", $scope.allOretransactions);
 });
