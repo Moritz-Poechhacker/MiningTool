@@ -14,16 +14,16 @@
         <alltransactions></alltransactions>
     </md-card>
     <md-card>
-        <table>
-            <tr>
-                <th> Ore </th>
-                <th> Amount </th>
-                <th> Total Price</th>
+        <table layout="column">
+            <tr layout="row">
+                <th flex> Ore </th>
+                <th flex> Amount </th>
+                <th flex> Total Price</th>
             </tr>
-            <tr ng-repeat="x in totals">
-                <td class="testo"> {{x.ore}}</td>
-                <td class="testo"> {{x.amount}}</td>
-                <td class="testo"> {{x.transvalue}}</td>
+            <tr layout="row" ng-repeat="x in totals" class="testo">
+                <td flex> {{x.ore}}</td>
+                <td flex> {{x.amount}}</td>
+                <td flex> {{x.transvalue}}</td>
             </tr>
         </table>
     </md-card>

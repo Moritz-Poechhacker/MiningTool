@@ -15,13 +15,18 @@ app.controller("TotProController", function(TransactionService, $log, $scope) {
     this.stat = true;
 
     this.$onChanges = function(changesObj){
-        $scope.ausgabe = [];
+        //$scope.ausgabe = [];
+        let array = [];
+        let i = 0;
+
         let toArray = TransactionService.getTotProper();
         for (let key in toArray) {
-            $scope.ausgabe.push({ "name": key, "oresAndAmounts":toArray[key], "PPTransH": true });
-            $log.debug("totproper");
-            $log.debug($scope.ausgabe);
+            array.push({ "name": key, "oresAndAmounts":toArray[key], "PPTransH": $scope.ausgabe[i] ? $scope.ausgabe[i].PPTransH : true });
+            i++;
         }
+        $log.debug($scope.ausgabe);
+        $scope.ausgabe = array;
+        $log.debug("TotPro2", array);
 
     };
 
@@ -32,11 +37,19 @@ app.controller("TotProController", function(TransactionService, $log, $scope) {
         this.stat = !this.stat;
     };
 
+    this.showPerPerson = function(charactername){
+        $log.debug("Charactername: ", charactername);
+        $scope.ausgabe.find(function(obj){return obj.name == charactername}).PPTransH = !$scope.ausgabe.find(function(obj){return obj.name == charactername}).PPTransH;
+        let debuggi = $scope.ausgabe.find(function(obj){return obj.name == charactername}).PPTransH;
+        $log.debug("charstat: " + debuggi);
+        $log.debug("TotPro3: ", $scope.ausgabe);
+    };
+
     this.totalFee = function(charname){
         let feecalc = TransactionService.getTransactions();
         let count = 0;
         for(let i = 0; i < feecalc.length; i++){
-            if(feecalc[i].name = charname){
+            if(feecalc[i].name == charname){
                 count++;
             }
         }

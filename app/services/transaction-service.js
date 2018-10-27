@@ -471,13 +471,17 @@ app.service("TransactionService", function($http,$log){
         charList.push({"name":name});
     };
 
+
+
     this.getOre = function(ore){
+        $log.debug("Ore name: ", ore);
         if(ore == undefined ||ore == ''){
             $log.debug(oreMainList);
             return oreMainList;
         }else {
             let index = oreMainList.map(function(e){return e.Name}).indexOf(ore);
-            if(index > 0 && index <= oreMainList.length) {
+            $log.debug(index);
+            if(index >= 0 && index <= oreMainList.length) {
                 console.log(index);
                 let tes = [oreMainList[index]];
                 console.log(tes);
@@ -488,7 +492,7 @@ app.service("TransactionService", function($http,$log){
                         Name:"The ore could not be found in the list"
                     }
                 ];
-                console.log(arr);
+                $log.debug("Returns Ore: ",arr);
                 return arr;
             }
         }

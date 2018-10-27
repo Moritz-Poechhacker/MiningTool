@@ -16,6 +16,7 @@ app.controller("UmrandungController", function ($scope, TransactionService, $log
         let sentOresAndAmount = new Map();
 
         TransactionService.getTransactions().map(function (x) {
+            $log.debug("umrandung: ",x);
             //console.log("get wenn key nicht vorhanden: " + sentOresAndAmount.get(x.ore));
             if(!totProper.hasOwnProperty(x.name)){
                 totProper[x.name] = { [x.ore]: x.amount, "totalvalue": x.Tvalue};

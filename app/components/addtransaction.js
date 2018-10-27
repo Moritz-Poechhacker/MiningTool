@@ -16,6 +16,7 @@ app.controller("TransactionController", function(TransactionService, $scope, $lo
     $scope.charlist = TransactionService.pchars();
     $scope.orelist = TransactionService.getOre();
     this.allThide = true;
+
     let that = this;
     $scope.onTrans = function() {
         //console.log($scope.transcharname);
@@ -25,5 +26,6 @@ app.controller("TransactionController", function(TransactionService, $scope, $lo
         that.mitteilen();
         console.log("Transactions: ");
         console.log(TransactionService.getTransactions());
-    }
+    };
+
 });
