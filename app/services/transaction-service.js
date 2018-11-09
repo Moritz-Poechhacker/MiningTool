@@ -457,6 +457,425 @@ app.service("TransactionService", function($http,$log){
             "value":16269
         }
     ];
+    let mineralList = [
+        {
+            "Name": "Tritanium",
+            "Weight": 0.01,
+            "Value": 34
+        },
+        {
+            "Name": "Pyerite",
+            "Weight": 0.01,
+            "Value": 35
+        },
+        {
+            "Name": "Mexallon",
+            "Weight": 0.01,
+            "Value": 36
+        },
+        {
+            "Name": "Isogen",
+            "Weight": 0.01,
+            "Value": 37
+        },
+        {
+            "Name": "Nocxium",
+            "Weight": 0.01,
+            "Value": 38
+        },
+        {
+            "Name": "Zydrine",
+            "Weight": 0.01,
+            "Value": 39
+        },
+        {
+            "Name": "Megacyte",
+            "Weight": 0.01,
+            "Value": 40
+        },
+        {
+            "Name": "Morphite",
+            "Weight": 0.01,
+            "Value": 11399
+        },
+        {
+            "Name": "Heavy Water",
+            "Weight": 0.4,
+            "Value": 16272
+        },
+        {
+            "Name": "Liquid Ozone",
+            "Weight": 0.4,
+            "Value": 16273
+        },
+        {
+            "Name": "Strontium",
+            "Weight": 3,
+            "Value": 16275
+        },
+        {
+            "Name": "Oxygen Isotopes",
+            "Weight": 0.03,
+            "Value": 17887
+        },
+        {
+            "Name": "Helium Isotopes",
+            "Weight": 0.03,
+            "Value": 16274
+        },
+        {
+            "Name": "Hydrogen Isotopes",
+            "Weight": 0.03,
+            "Value": 17889
+        },{
+            "Name": "Nitrogen Isotopes",
+            "Weight": 0.03,
+            "Value": 17888
+        },
+    ];
+    let oreContents = [
+        {
+            "Name": "Veldspar",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 415
+                }
+            ]
+        },
+        {
+            "Name": "Concentrated Veldspar",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 56000
+                }
+            ]
+        },
+        {
+            "Name": "Dense Veldspar",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 56000
+                }
+            ]
+        },
+        {
+            "Name": "Stable Veldspar",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 56000
+                }
+            ]
+        },
+        {
+            "Name": "Scordite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 346
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 173
+                }
+            ]
+        },
+        {
+            "Name": "Condensed Scordite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 364
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 182
+                }
+            ]
+        },
+        {
+            "Name": "Massive Scordite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 381
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 190
+                }
+            ]
+        },
+        {
+            "Name": "Glossy Scordite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 398
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 199
+                }
+            ]
+        },
+        {
+            "Name": "Pyroxeres",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 351
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 25
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 50
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 5
+                }
+            ]
+        },
+        {
+            "Name": "Solid Pyroxeres",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 369
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 26
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 53
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 5
+                }
+            ]
+        },
+        {
+            "Name": "Viscous Pyroxeres",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 387
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 27
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 55
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 5
+                }
+            ]
+        },
+        {
+            "Name": "Opulent Pyroxeres",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 404
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 29
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 58
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 6
+                }
+            ]
+        },
+        {
+            "Name": "Plagioclase",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 404
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 29
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 58
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 6
+                }
+            ]
+        },
+        {
+            "Name": "Azure Plagioclase",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 404
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 29
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 58
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 6
+                }
+            ]
+        },
+        {
+            "Name": "Rich Plagioclase",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 404
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 29
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 58
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 6
+                }
+            ]
+        },
+        {
+            "Name": "Sparkling Plagioclase",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 404
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 29
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 58
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 6
+                }
+            ]
+        },
+        {
+            "Name": "Spodumain",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 56000
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 12050
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2100
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 450
+                }
+            ]
+        },
+        {
+            "Name": "Bright Spodumain",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 56000
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 12050
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2100
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 450
+                }
+            ]
+        },
+        {
+            "Name": "Gleaming Spodumain",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 56000
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 12050
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2100
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 450
+                }
+            ]
+        },
+        {
+            "Name": "Dazzling Spodumain",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 56000
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 12050
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2100
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 450
+                }
+            ]
+        },
+    ];
+
     /*$log.debug("#################");
     $log.debug(oreMainList);
     $log.debug("#################");*/
@@ -471,11 +890,9 @@ app.service("TransactionService", function($http,$log){
         charList.push({"name":name});
     };
 
-
-
     this.getOre = function(ore){
         $log.debug("Ore name: ", ore);
-        if(ore == undefined ||ore == ''){
+        if(ore == undefined || ore == ''){
             $log.debug(oreMainList);
             return oreMainList;
         }else {
@@ -545,6 +962,9 @@ app.service("TransactionService", function($http,$log){
         for(let i = 0; i < oreMainList.length; i++){
           this.getPrice(oreMainList[i].value, i);
         }
+        for(let i = 0; i < mineralList.length; i++){
+            this.getMineralPrice()
+        }
     this.getPriceFromList = function(t){
             let i = oreMainList.findIndex(x => x.Name === t);
             $log.debug("I = " + i);
@@ -552,6 +972,15 @@ app.service("TransactionService", function($http,$log){
             $log.debug(oreMainList[i].value);
             $log.debug("###");*/
             return oreMainList[i].value;
+    };
+
+    this.getMineralPrice = function(ID, pos){
+      let that = this;
+      $http
+          .get('https://evepraisal.com/item/'+ ID +'.json?persist=no')
+          .then(function(response){
+            mineralList[pos].value = that.roundNumber(response.data.summaries[1].prices.buy.median, 2);
+        });
     };
     this.setFee = function(amount){
         fee = amount;

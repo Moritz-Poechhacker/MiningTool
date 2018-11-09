@@ -1,6 +1,7 @@
-<md-content>
+<md-content style="background-color: grey; !important">
     <md-card>
-        <table>
+        <md-button ng-click="$ctrl.allThide = !$ctrl.allThide" > [ {{ $ctrl.allThide ? "-" : "+" }} ] List of Ores </md-button>
+        <table ng-show="$ctrl.allThide">
             <tr>
                 <th> Name</th>
                 <th> Weight</th>
