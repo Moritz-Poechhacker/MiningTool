@@ -461,76 +461,77 @@ app.service("TransactionService", function($http,$log){
         {
             "Name": "Tritanium",
             "Weight": 0.01,
-            "Value": 34
+            "value": 34
         },
         {
             "Name": "Pyerite",
             "Weight": 0.01,
-            "Value": 35
+            "value": 35
         },
         {
             "Name": "Mexallon",
             "Weight": 0.01,
-            "Value": 36
+            "value": 36
         },
         {
             "Name": "Isogen",
             "Weight": 0.01,
-            "Value": 37
+            "value": 37
         },
         {
             "Name": "Nocxium",
             "Weight": 0.01,
-            "Value": 38
+            "value": 38
         },
         {
             "Name": "Zydrine",
             "Weight": 0.01,
-            "Value": 39
+            "value": 39
         },
         {
             "Name": "Megacyte",
             "Weight": 0.01,
-            "Value": 40
+            "value": 40
         },
         {
             "Name": "Morphite",
             "Weight": 0.01,
-            "Value": 11399
+            "value": 11399
         },
         {
             "Name": "Heavy Water",
             "Weight": 0.4,
-            "Value": 16272
+            "value": 16272
         },
         {
             "Name": "Liquid Ozone",
             "Weight": 0.4,
-            "Value": 16273
+            "value": 16273
         },
         {
             "Name": "Strontium",
             "Weight": 3,
-            "Value": 16275
+            "value": 16275
         },
         {
             "Name": "Oxygen Isotopes",
             "Weight": 0.03,
-            "Value": 17887
+            "value": 17887
         },
         {
             "Name": "Helium Isotopes",
             "Weight": 0.03,
-            "Value": 16274
+            "value": 16274
         },
         {
             "Name": "Hydrogen Isotopes",
             "Weight": 0.03,
-            "Value": 17889
-        },{
+            "value": 17889
+        },
+        {
             "Name": "Nitrogen Isotopes",
             "Weight": 0.03,
-            "Value": 17888
+            "value": 17888
         },
     ];
     let oreContents = [
@@ -915,6 +916,31 @@ app.service("TransactionService", function($http,$log){
         }
     };
 
+    this.getMineral = function(mineral){
+        $log.debug("Ore name: ", mineral);
+        if(mineral == undefined || mineral == ''){
+            $log.debug(mineralList);
+            return mineralList;
+        }else {
+            let index = mineralList.map(function(e){return e.Name}).indexOf(mineral);
+            $log.debug(index);
+            if(index >= 0 && index <= mineralList.length) {
+                console.log(index);
+                let tes = [mineralList[index]];
+                console.log(tes);
+                return tes;
+            }else{
+                let arr = [
+                    {
+                        Name:"The mineral could not be found in the list"
+                    }
+                ];
+                $log.debug("Returns Mineral: ",arr);
+                return arr;
+            }
+        }
+    };
+
     this.addTransaction = function(e){
         transactionList.push(e);
     };
@@ -962,9 +988,6 @@ app.service("TransactionService", function($http,$log){
         for(let i = 0; i < oreMainList.length; i++){
           this.getPrice(oreMainList[i].value, i);
         }
-        for(let i = 0; i < mineralList.length; i++){
-            this.getMineralPrice()
-        }
     this.getPriceFromList = function(t){
             let i = oreMainList.findIndex(x => x.Name === t);
             $log.debug("I = " + i);
@@ -982,6 +1005,9 @@ app.service("TransactionService", function($http,$log){
             mineralList[pos].value = that.roundNumber(response.data.summaries[1].prices.buy.median, 2);
         });
     };
+    for(let i = 0; i < mineralList.length; i++){
+        this.getMineralPrice(mineralList[i].value, i);
+    }
     this.setFee = function(amount){
         fee = amount;
     };

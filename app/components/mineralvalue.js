@@ -9,5 +9,6 @@ app.component("mineralvalue", {
 
 
 app.controller("MValController", function(TransactionService, $log, $scope) {
+    $log.debug("MineralPrice: ", TransactionService.getMineral());
 
 });

@@ -44,8 +44,8 @@ app.controller("UmrandungController", function ($scope, TransactionService, $log
         $log.debug("####");
         $log.debug(sentOresAndAmount);
         for(let oreAndAmount of sentOresAndAmount){
-            let dubidubiduba = oreAndAmount[1] * TransactionService.getOre(oreAndAmount[0])[0].value;
-            $scope.totals.push({"ore": oreAndAmount[0], "amount": oreAndAmount[1], "transvalue": dubidubiduba});
+            let transactionOreValue = oreAndAmount[1] * TransactionService.getOre(oreAndAmount[0])[0].value;
+            $scope.totals.push({"ore": oreAndAmount[0], "amount": oreAndAmount[1], "transvalue": transactionOreValue});
             $log.debug("umrandung totals: ", $scope.totals);
         }
 
