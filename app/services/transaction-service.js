@@ -5,6 +5,7 @@ app.service("TransactionService", function($http,$log){
     let transactionList = [];
     let totproper = {};
     let fee = 0;
+    let repval = 0.5;
     let oreMainList = [
         {
             "Type":"Veldspar",
@@ -549,7 +550,7 @@ app.service("TransactionService", function($http,$log){
             "contents": [
                 {
                     "Name": "Tritanium",
-                    "Amount": 56000
+                    "Amount": 436
                 }
             ]
         },
@@ -558,7 +559,7 @@ app.service("TransactionService", function($http,$log){
             "contents": [
                 {
                     "Name": "Tritanium",
-                    "Amount": 56000
+                    "Amount": 457
                 }
             ]
         },
@@ -567,7 +568,7 @@ app.service("TransactionService", function($http,$log){
             "contents": [
                 {
                     "Name": "Tritanium",
-                    "Amount": 56000
+                    "Amount": 478
                 }
             ]
         },
@@ -792,6 +793,514 @@ app.service("TransactionService", function($http,$log){
             ]
         },
         {
+            "Name": "Omber",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 800
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 100
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 85
+                }
+            ]
+        },
+        {
+            "Name": "Silvery Omber",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 840
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 105
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 90
+                }
+            ]
+        },
+        {
+            "Name": "Golden Omber",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 880
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 110
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 94
+                }
+            ]
+        },
+        {
+            "Name": "Platinoid Omber",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 920
+                },
+                {
+                    "Name": "Pyerite",
+                    "Amount": 115
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 98
+                }
+            ]
+        },
+        {
+            "Name": "Kernite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 134
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 267
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 134
+                }
+            ]
+        },
+        {
+            "Name": "Luminous Kernite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 141
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 281
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 141
+                }
+            ]
+        },
+        {
+            "Name": "Fiery Kernite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 148
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 294
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 148
+                }
+            ]
+        },
+        {
+            "Name": "Resplendant Kernite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 154
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 307
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 154
+                }
+            ]
+        },
+        {
+            "Name": "Jaspet",
+            "contents": [
+                {
+                    "Name": "Mexallon",
+                    "Amount": 350
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 75
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 8
+                }
+            ]
+        },
+        {
+            "Name": "Pure Jaspet",
+            "contents": [
+                {
+                    "Name": "Mexallon",
+                    "Amount": 368
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 79
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 8
+                }
+            ]
+        },
+        {
+            "Name": "Pristine Jaspet",
+            "contents": [
+                {
+                    "Name": "Mexallon",
+                    "Amount": 385
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 83
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 9
+                }
+            ]
+        },
+        {
+            "Name": "Immaculate Jaspet",
+            "contents": [
+                {
+                    "Name": "Mexallon",
+                    "Amount": 403
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 86
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 9
+                }
+            ]
+        },
+        {
+            "Name": "Hemorphite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 2200
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 100
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 120
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 15
+                }
+            ]
+        },
+        {
+            "Name": "Vivid Hemorphite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 2310
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 105
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 126
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 16
+                }
+            ]
+        },
+        {
+            "Name": "Radiant Hemorphite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 2420
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 110
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 132
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 17
+                }
+            ]
+        },
+        {
+            "Name": "Scintillating Hemorphite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 2530
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 115
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 138
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 17
+                }
+            ]
+        },
+        {
+            "Name": "Hedbergite",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 1000
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 200
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 100
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 19
+                }
+            ]
+        },
+        {
+            "Name": "Vitric Hedbergite",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 1050
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 210
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 105
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 20
+                }
+            ]
+        },
+        {
+            "Name": "Glazed Hedbergite",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 1100
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 220
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 110
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 21
+                }
+            ]
+        },
+        {
+            "Name": "Lustrous Hedbergite",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 1150
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 230
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 115
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 22
+                }
+            ]
+        },
+        {
+            "Name": "Gneiss",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 2200
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2400
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 300
+                }
+            ]
+        },
+        {
+            "Name": "Iridescent Gneiss",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 2310
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2520
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 315
+                }
+            ]
+        },
+        {
+            "Name": "Prismatic Gneiss",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 2420
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2640
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 330
+                }
+            ]
+        },
+        {
+            "Name": "Brilliant Gneiss",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 2530
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2760
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 345
+                }
+            ]
+        },
+        {
+            "Name": "Dark Ochre",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 10000
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 1600
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 120
+                }
+            ]
+        },
+        {
+            "Name": "Onyx Ochre",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 10500
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 1680
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 126
+                }
+            ]
+        },
+        {
+            "Name": "Obsidian Ochre",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 11000
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 1760
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 132
+                }
+            ]
+        },
+        {
+            "Name": "Jet Ochre",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 11500
+                },
+                {
+                    "Name": "Isogen",
+                    "Amount": 1840
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 138
+                }
+            ]
+        },
+        {
             "Name": "Spodumain",
             "contents": [
                 {
@@ -875,7 +1384,475 @@ app.service("TransactionService", function($http,$log){
                 }
             ]
         },
+        {
+            "Name": "Crokite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 21000
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 760
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 135
+                }
+            ]
+        },
+        {
+            "Name": "Sharp Crokite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 22050
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 798
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 142
+                }
+            ]
+        },
+        {
+            "Name": "Crystalline Crokite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 23100
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 836
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 149
+                }
+            ]
+        },
+        {
+            "Name": "Pellucid Crokite",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 24150
+                },
+                {
+                    "Name": "Nocxium",
+                    "Amount": 874
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 155
+                }
+            ]
+        },
+        {
+            "Name": "Bistot",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 12000
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 450
+                },
+                {
+                    "Name": "Megacyte",
+                    "Amount": 100
+                }
+            ]
+        },
+        {
+            "Name": "Triclinic Bistot",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 12600
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 473
+                },
+                {
+                    "Name": "Megacyte",
+                    "Amount": 105
+                }
+            ]
+        },
+        {
+            "Name": "Monoclinic Bistot",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 13200
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 495
+                },
+                {
+                    "Name": "Megacyte",
+                    "Amount": 110
+                }
+            ]
+        },
+        {
+            "Name": "Cubic Bistot",
+            "contents": [
+                {
+                    "Name": "Pyerite",
+                    "Amount": 13800
+                },
+                {
+                    "Name": "Zydrine",
+                    "Amount": 518
+                },
+                {
+                    "Name": "Megacyte",
+                    "Amount": 115
+                }
+            ]
+        },
+        {
+            "Name": "Arkonor",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 22000
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2500
+                },
+                {
+                    "Name": "Megacyte",
+                    "Amount": 320
+                }
+            ]
+        },
+        {
+            "Name": "Crimson Arkonor",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 23100
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2625
+                },
+                {
+                    "Name": "Megacyte",
+                    "Amount": 336
+                }
+            ]
+        },
+        {
+            "Name": "Prime Arkonor",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 24200
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2750
+                },
+                {
+                    "Name": "Megacyte",
+                    "Amount": 352
+                }
+            ]
+        },
+        {
+            "Name": "Flawless Arkonor",
+            "contents": [
+                {
+                    "Name": "Tritanium",
+                    "Amount": 25300
+                },
+                {
+                    "Name": "Mexallon",
+                    "Amount": 2875
+                },
+                {
+                    "Name": "Megacyte",
+                    "Amount": 368
+                }
+            ]
+        },
+        {
+            "Name": "Mercoxit",
+            "contents": [
+                {
+                    "Name": "Morphite",
+                    "Amount": 300
+                }
+            ]
+        },
+        {
+            "Name": "Magma Mercoxit",
+            "contents": [
+                {
+                    "Name": "Morphite",
+                    "Amount": 315
+                }
+            ]
+        },
+        {
+            "Name": "Vitreous Mercoxit",
+            "contents": [
+                {
+                    "Name": "Morphite",
+                    "Amount": 330
+                }
+            ]
+        },
+        {
+            "Name": "Clear Icicle",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 69
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 35
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 1
+                },
+                {
+                    "Name": "Helium Isotopes",
+                    "Amount": 414
+                }
+            ]
+        },
+        {
+            "Name": "Enriched Clear Icicle",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 104
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 55
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 1
+                },
+                {
+                    "Name": "Helium Isotopes",
+                    "Amount": 483
+                }
+            ]
+        },
+        {
+            "Name": "White Glaze",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 69
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 35
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 1
+                },
+                {
+                    "Name": "Nitrogen Isotopes",
+                    "Amount": 414
+                }
+            ]
+        },
+        {
+            "Name": "Pristine White Glaze",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 104
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 55
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 1
+                },
+                {
+                    "Name": "Nitrogen Isotopes",
+                    "Amount": 483
+                }
+            ]
+        },
+        {
+            "Name": "Blue Ice",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 69
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 35
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 1
+                },
+                {
+                    "Name": "Oxygen Isotopes",
+                    "Amount": 414
+                }
+            ]
+        },
+        {
+            "Name": "Thick Blue Ice",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 104
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 55
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 1
+                },
+                {
+                    "Name": "Oxygen Isotopes",
+                    "Amount": 483
+                }
+            ]
+        },
+        {
+            "Name": "Glacial Mass",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 69
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 35
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 1
+                },
+                {
+                    "Name": "Hydrogen Isotopes",
+                    "Amount": 414
+                }
+            ]
+        },
+        {
+            "Name": "Smooth Glacial Mass",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 104
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 55
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 1
+                },
+                {
+                    "Name": "Hydrogen Isotopes",
+                    "Amount": 483
+                }
+            ]
+        },
+        {
+            "Name": "Glare Crust",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 1381
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 691
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 35
+                }
+            ]
+        },
+        {
+            "Name": "Dark Glitter",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 691
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 1381
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 69
+                }
+            ]
+        },
+        {
+            "Name": "Gelidus",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 345
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 691
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 104
+                }
+            ]
+        },
+        {
+            "Name": "Krystallos",
+            "contents": [
+                {
+                    "Name": "Heavy Water",
+                    "Amount": 173
+                },
+                {
+                    "Name": "Liquid Ozone",
+                    "Amount": 691
+                },
+                {
+                    "Name": "Strontium",
+                    "Amount": 173
+                }
+            ]
+        }
     ];
+    let fullPriceArray = [];
 
     /*$log.debug("#################");
     $log.debug(oreMainList);
@@ -917,7 +1894,7 @@ app.service("TransactionService", function($http,$log){
     };
 
     this.getMineral = function(mineral){
-        $log.debug("Ore name: ", mineral);
+        $log.debug("Mineral name: ", mineral);
         if(mineral == undefined || mineral == ''){
             $log.debug(mineralList);
             return mineralList;
@@ -987,7 +1964,8 @@ app.service("TransactionService", function($http,$log){
     };
         for(let i = 0; i < oreMainList.length; i++){
           this.getPrice(oreMainList[i].value, i);
-        }
+        };
+
     this.getPriceFromList = function(t){
             let i = oreMainList.findIndex(x => x.Name === t);
             $log.debug("I = " + i);
@@ -1007,7 +1985,41 @@ app.service("TransactionService", function($http,$log){
     };
     for(let i = 0; i < mineralList.length; i++){
         this.getMineralPrice(mineralList[i].value, i);
-    }
+    };
+
+    this.getOreMineralArray = function(){
+        return oreContents;
+    };
+
+    this.setReproValue = function(reprovalue){
+        repval = reprovalue;
+    };
+
+    this.getOreMineralPrice = function(ore){
+        let that = this;
+        let minerals = [];
+        $log.debug("Ore name: ", ore);
+        if(ore == undefined || ore == ''){
+            return "Error";
+        }else {
+            let ore_id = oreContents.findIndex(x => x.Name === ore);
+            $log.debug("Ore ID: ", ore_id);
+            $log.debug("Ore length: ", oreContents[ore_id].contents.length);
+            for(let i = 0; i < oreContents[ore_id].contents.length; i++){
+                for(let j = 0; j < mineralList.length; j++){
+                    if(oreContents[ore_id].contents[i].Name == mineralList[j].Name){
+                        let mineralTotalPrice = mineralList[j].value * that.roundNumber((oreContents[ore_id].contents[i].Amount * repval),0);
+                        //mineralTotalPrice = TransactionService.roundNumber(mineralTotalPrice, 2);
+                        minerals.push({"name": mineralList[j].Name, "value": mineralTotalPrice});
+                    }
+                }
+            }
+            fullPriceArray = [{"name": ore,
+                "minerals": minerals}];
+            return fullPriceArray;
+        }
+    };
+
     this.setFee = function(amount){
         fee = amount;
     };

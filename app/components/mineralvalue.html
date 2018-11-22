@@ -1,8 +1,33 @@
-<md-content style="background-color: grey; !important">
-    <md-card>
-        <table>
+<md-content>
+    <md-card layout-align="center">
+        <div layout="row" layout-align="center">
+        <md-input-container>
+            <label>Ore</label>
+            <md-select ng-model="orename">
+                <md-option><em>None</em></md-option>
+                <md-option ng-repeat="x in oreswithminerals" ng-value="x.Name">
+                    {{x.Name}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Reprocessing Percentage</label>
+            <input type="number" step="any" name="reprocessingAmount" placeholder="{{reproAmount}}" ng-model="reproAmount" min="0" max="100"/>
+        </md-input-container>
+        <md-button ng-click="$ctrl.setRepVal(reproAmount)"> OK </md-button>
+        </div>
+        <table class="testo">
             <tr>
-                <th>Test</th>
+                <th>Erz Name:</th>
+                <th>{{rore[0].name}}</th>
+            </tr>
+            <tr>
+                <th>Mineral</th>
+                <th>Price</th>
+            </tr>
+            <tr ng-repeat="x in rore[0].minerals">
+                <td>{{x.name}}</td>
+                <td>{{x.value}} ISK</td>
             </tr>
         </table>
     </md-card>
